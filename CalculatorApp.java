@@ -11,24 +11,24 @@ public class CalculatorApp {
 			char op = UI.scanOp();
 			int b = UI.scanInt();
 			int r = 0;
-			if (op == '+') {
-				r = Arithmetics.add(a, b);
-				i++;
-				UI.renderResult(a, op, b, r);
-			} else if (op == '-') {
-				r = Arithmetics.sub(a, b);
-				i++;
-				UI.renderResult(a, op, b, r);
-			} else if (op == '*') {
-				r = Arithmetics.mul(a, b);
-				i++;
-				UI.renderResult(a, op, b, r);
-			} else if (op == '/') {
-				r = Arithmetics.div(a, b);
-				i++;
-				UI.renderResult(a, op, b, r);
-			} else {
-				System.out.println("      Wrong operation, please, try again.");
+			switch (op) {
+			case '+': r = Arithmetics.add(a, b); 
+			i++;
+			UI.renderResult(a, op, b, r);
+			break;
+			case '-': r = Arithmetics.sub(a, b); 
+			i++;
+			UI.renderResult(a, op, b, r);
+			break;
+			case '*': r = Arithmetics.mul(a, b); 
+			i++;
+			UI.renderResult(a, op, b, r);
+			break;
+			case '/': r = Arithmetics.div(a, b); 
+			i++;
+			UI.renderResult(a, op, b, r);
+			break;
+			default : System.out.println("      Wrong operation, please, try again.");
 			}
 		}
 
